@@ -22,9 +22,9 @@ for i in range(len(messages)):
     msg = ' '.join(msg)
     corpus.append(msg)
 
-# bag of words model
-from sklearn.feature_extraction.text import CountVectorizer
-cv = CountVectorizer(max_features = 5000)
+# tfidf
+from sklearn.feature_extraction.text import TfidfVectorizer
+cv = TfidfVectorizer(max_features = 5000)
 X = cv.fit_transform(corpus).toarray()
 
 y = pd.get_dummies(messages["label"])
@@ -47,7 +47,7 @@ cm = confusion_matrix(y_test, y_pred)
 
 from sklearn.metrics import accuracy_score
 accuracy = accuracy_score(y_test, y_pred)
-# accuracy = 0.9847533632286996
+# accuracy = 0.9739910313901345
 
 # using lemmatization
 from nltk.stem import WordNetLemmatizer
@@ -61,9 +61,9 @@ for i in range(len(messages)):
     msg = ' '.join(msg)
     corpus.append(msg)
 
-# bag of words model
-from sklearn.feature_extraction.text import CountVectorizer
-cv = CountVectorizer(max_features = 5000)
+# tfidf
+from sklearn.feature_extraction.text import TfidfVectorizer
+cv = TfidfVectorizer(max_features = 5000)
 X = cv.fit_transform(corpus).toarray()
 
 y = pd.get_dummies(messages["label"])
@@ -86,4 +86,4 @@ cm = confusion_matrix(y_test, y_pred)
 
 from sklearn.metrics import accuracy_score
 accuracy = accuracy_score(y_test, y_pred)
-# accuracy =0.9820627802690582
+# accuracy =0.9766816143497757
